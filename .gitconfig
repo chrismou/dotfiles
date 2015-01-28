@@ -1,0 +1,70 @@
+[user]
+    user = chrismou
+    name = Chris Chrisostomou
+    email = stuff@mou.me.uk
+
+[Github]
+    username = chrismou
+    user = chrismou
+
+[alias]
+    st = status
+    cm = commit
+    cl = clone
+    br = branch
+    co = checkout
+    df = diff
+    pl = pull
+    plr = pull --rebase
+    pu = push
+    hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    
+    ## List all available aliases
+    aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
+    
+    ## List all available branches
+    br = branch -av
+    
+    ## Which files are edited the most
+    churn = !git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print "count,file"} {print $1 "," $2}'
+    
+    ## Unstage uncommited changes
+    unstage = reset HEAD --  
+    
+    ## Update all submodules in one go
+    subup = submodule update --init   
+
+[merge]
+    ff = false
+
+[url "git@github.com:"]
+    insteadOf = gh:
+
+[url "https://gist.github.com/"]
+    insteadOf = gist:
+
+[url "git@bitbucket.org:"]
+    insteadOf = bb:
+
+[url "git@heroku.com:"]
+    insteadOf = "heroku:"
+
+[color]
+    ui = true
+
+color "branch"]
+    current = yellow reverse
+    local   = yellow
+    remote  = green
+
+[color "diff"]
+    meta = yellow 
+    frag = magenta 
+    old  = red 
+    new  = green 
+
+[color "status"]
+    added     = yellow
+    changed   = green
+    untracked = cyan

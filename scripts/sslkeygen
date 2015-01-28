@@ -1,0 +1,18 @@
+#!/bin/bash
+
+######################
+##                  ##
+##  SSL CSR/KeYGEN  ##
+##                  ##
+######################
+
+echo 'Please provide a domain to use for CSR/Key generation, eg; mou.me  -- (NB: also use this as the Common Name)'
+read DOMAIN
+DIR="/home/$USER/ssl-crt/$DOMAIN"
+mkdir $DIR
+
+openssl req -nodes -newkey rsa:2048 -sha256 -keyout $DIR/$DOMAIN.key -out $DIR/$DOMAIN.csr
+
+echo -e "\nCSR & Key for $DOMAIN have been saved to $DIR\n\nCSR:"
+cat $DIR/$DOMAIN.csr
+exit 0
