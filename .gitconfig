@@ -53,7 +53,7 @@
 [color]
     ui = true
 
-color "branch"]
+[color "branch"]
     current = yellow reverse
     local   = yellow
     remote  = green
