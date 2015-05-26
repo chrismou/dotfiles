@@ -1,0 +1,2 @@
+# Search for all mentions for COMMENT '*', (not including the ,)
+COMMENT '[^']+\'(?=[#,])
