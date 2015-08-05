@@ -34,6 +34,9 @@
     
     ## Update all submodules in one go
     subup = submodule update --init   
+    
+    ## Better git log
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
 [merge]
     ff = false
