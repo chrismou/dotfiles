@@ -52,6 +52,9 @@
 
 [url "git@heroku.com:"]
     insteadOf = "heroku:"
+    
+[url "git@gitlab.com:"]
+    insteadOf = "gl:"
 
 [color]
     ui = true
