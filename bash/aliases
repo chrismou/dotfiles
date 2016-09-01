@@ -1,3 +1,6 @@
+alias grephist='history | grep -i';
+alias unittest='vendor/bin/phpunit -c phpunit.xml';
+
 if [[ "$OSTYPE" =~ darwin ]]; then
   alias ls='ls -G';
   alias ll='ls -lG';
