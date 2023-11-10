@@ -52,7 +52,7 @@
 
 [url "git@heroku.com:"]
     insteadOf = "heroku:"
-    
+
 [url "git@gitlab.com:"]
     insteadOf = "gl:"
 
@@ -74,3 +74,17 @@
     added     = yellow
     changed   = green
     untracked = cyan
+
+[commit]
+    gpgsign = true
+
+[core]
+    excludesfile = /home/mou/.gitignore_global
+    autocrlf = input
+[pull]
+    ff = only
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
