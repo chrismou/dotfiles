@@ -8,3 +8,11 @@ else
   alias ls='ls --color=auto';
   alias ll='ls --color=auto -l';
 fi;
+
+#xdebug
+alias xdebugDisable='sudo phpdismod -v 7.4 xdebug && sudo phpdismod -v 8.2 xdebug && sudo systemctl restart php7.4-fpm && sudo systemctl restart php8.2-fpm';
+alias xdebugEnable='sudo phpenmod -v 7.4 xdebug && sudo phpenmod -v 8.2 xdebug && sudo systemctl restart php7.4-fpm && sudo systemctl restart php8.2-fpm';
+
+#laravel
+alias art='php artisan';
+alias artx='php -dxdebug.start_with_request=yes -dxdebug.mode=debug -dxdebug.client_port=9003 -dxdebug.client_host=127.0.0.1 -dxdebug.idekey=PHPSTORM artisan';
